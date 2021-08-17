@@ -13,5 +13,15 @@ export default {
       title: "Topic",
       type: "string",
     },
+    {
+      name: "blog",
+      title: "Body",
+      type: "array",
+      of: [
+        {
+          type: "block",
+        },
+      ],
+    },
   ],
 };
