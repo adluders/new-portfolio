@@ -4,7 +4,7 @@ export default {
   type: "document",
   fields: [
     {
-      name: "title",
+      name: "blogTitle",
       title: "Blog Title",
       type: "string",
     },
@@ -12,6 +12,14 @@ export default {
       name: "topic",
       title: "Topic",
       type: "string",
+    },
+    {
+      name: "blogLink",
+      title: "Article Link",
+      type: "slug",
+      options: {
+        source: "title",
+      },
     },
     {
       name: "blog",
