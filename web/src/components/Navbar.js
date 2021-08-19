@@ -6,7 +6,7 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 87%;
+  width: 100%;
   margin: 2rem auto;
 `;
 
@@ -19,6 +19,7 @@ const NavItem = styled.li``;
 
 const NavLink = styled(Link)`
   border-bottom: 1px solid transparent;
+  color: #888;
   &:hover {
     color: #000;
   }

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const useResizer = () => {
-  const [windowWidth, setWindowWith] = useState(window.innerWidth);
+  const [windowWidth, setWindowWith] = useState();
 
   const updateWidth = () => setWindowWith(window.innerWidth);
 

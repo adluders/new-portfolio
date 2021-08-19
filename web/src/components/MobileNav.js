@@ -5,7 +5,7 @@ import { navLinks } from "./Navbar";
 
 const Wrapper = styled.nav`
   position: relative;
-  margin-top: 1.5rem;
+  margin: 1.5rem 0;
 `;
 
 const NavHeader = styled.div`

@@ -1,10 +1,13 @@
 import React from "react";
+import Hero from "../components/Hero";
 import Layout from "../components/Layout";
+import ProjectList from "../components/ProjectList";
 
 const IndexPage = () => {
   return (
     <Layout>
-      <h1>Index</h1>
+      <Hero />
+      <ProjectList />
     </Layout>
   );
 };
