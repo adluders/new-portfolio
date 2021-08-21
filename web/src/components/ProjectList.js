@@ -14,12 +14,16 @@ const Wrapper = styled.section`
   }
 `;
 
-const ProjectList = () => {
+const ProjectList = ({ projects }) => {
   return (
     <Wrapper>
-      <ProjectItem featured />
-      <ProjectItem />
-      <ProjectItem />
+      {projects.map(project => (
+        <ProjectItem
+          featured={project.featured}
+          key={project.id}
+          project={project}
+        />
+      ))}
     </Wrapper>
   );
 };

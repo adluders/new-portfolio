@@ -6156,23 +6156,40 @@ __webpack_require__.r(__webpack_exports__);
 
 const Wrapper = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__.default)(gatsby__WEBPACK_IMPORTED_MODULE_0__.Link).withConfig({
   displayName: "ProjectItem__Wrapper"
-})(["border-radius:0.5rem;border:solid red 1px;display:flex;align-items:flex-start;justify-content:flex-end;flex-direction:column;padding:0.5rem;grid-row:", ";"], ({
+})(["border-radius:0.5rem;display:flex;align-items:flex-start;justify-content:center;flex-direction:column;padding:0.5rem;height:max-content;margin:auto;position:relative;grid-row:", ";&:hover{& > div{display:block;}}"], ({
   featured
 }) => featured && "1 / 3");
+const Details = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div.withConfig({
+  displayName: "ProjectItem__Details"
+})(["position:absolute;top:0;left:0;width:100%;height:100%;background-color:purple;display:none;"]);
 const Title = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.h2.withConfig({
   displayName: "ProjectItem__Title"
-})([""]);
+})(["color:#fff;"]);
 const SubTitle = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.p.withConfig({
   displayName: "ProjectItem__SubTitle"
 })([""]);
+const ImageHolder = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div.withConfig({
+  displayName: "ProjectItem__ImageHolder"
+})([""]);
+const Image = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.img.withConfig({
+  displayName: "ProjectItem__Image"
+})(["display:inline-block;width:100%;height:100%;"]);
 
 const ProjectItem = ({
-  featured
+  featured,
+  project
 }) => {
+  const {
+    projectTitle,
+    blurb,
+    projectImg
+  } = project;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(Wrapper, {
     featured: featured,
     to: "/"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(Title, null, "Lorem ipsum dolor sit amet."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(SubTitle, null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, quae?"));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(ImageHolder, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(Image, {
+    src: projectImg.asset.gatsbyImageData.images.fallback.src
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(Details, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(Title, null, projectTitle), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(SubTitle, null, blurb)));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProjectItem);
@@ -6201,10 +6218,14 @@ const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.section.w
   displayName: "ProjectList__Wrapper"
 })(["display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);gap:1rem;margin:3rem 0;@media screen and (max-width:768px){display:flex;flex-direction:column;}"]);
 
-const ProjectList = () => {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Wrapper, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ProjectItem__WEBPACK_IMPORTED_MODULE_1__.default, {
-    featured: true
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ProjectItem__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ProjectItem__WEBPACK_IMPORTED_MODULE_1__.default, null));
+const ProjectList = ({
+  projects
+}) => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Wrapper, null, projects.map(project => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ProjectItem__WEBPACK_IMPORTED_MODULE_1__.default, {
+    featured: project.featured,
+    key: project.id,
+    project: project
+  })));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProjectList);
@@ -6325,10 +6346,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const IndexPage = () => {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_2__.default, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Hero__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ProjectList__WEBPACK_IMPORTED_MODULE_3__.default, null));
+const IndexPage = ({
+  data
+}) => {
+  const homeProjects = data.allSanityProject.nodes.filter(project => project.showOnHome === true);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_2__.default, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Hero__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ProjectList__WEBPACK_IMPORTED_MODULE_3__.default, {
+    projects: homeProjects
+  }));
 };
 
+const query = "2583756787";
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);
 
 /***/ }),
