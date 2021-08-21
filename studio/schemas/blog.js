@@ -14,11 +14,21 @@ export default {
       type: "string",
     },
     {
+      name: "articleImg",
+      title: "Blog Image",
+      type: "image",
+    },
+    {
+      name: "featured",
+      title: "Show on Home",
+      type: "boolean",
+    },
+    {
       name: "blogLink",
       title: "Article Link",
       type: "slug",
       options: {
-        source: "title",
+        source: "blogTitle",
       },
     },
     {

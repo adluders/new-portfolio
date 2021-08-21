@@ -14,6 +14,11 @@ export default {
       type: "string",
     },
     {
+      title: "Image",
+      name: "projectImg",
+      type: "image",
+    },
+    {
       title: "Slug",
       name: "slug",
       type: "slug",
@@ -24,7 +29,17 @@ export default {
     {
       title: "Project Demo",
       name: "projectDemo",
-      type: "string",
+      type: "url",
+    },
+    {
+      title: "Show on Home",
+      name: "showOnHome",
+      type: "boolean",
+    },
+    {
+      title: "Featured Project",
+      name: "featured",
+      type: "boolean",
     },
   ],
 };
