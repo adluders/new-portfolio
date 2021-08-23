@@ -1,6 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Hero from "../components/Hero";
+import HomeBlogs from "../components/HomeBlogs";
 import Layout from "../components/Layout";
 import ProjectList from "../components/ProjectList";
 
@@ -13,6 +14,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Hero />
       <ProjectList projects={homeProjects} />
+      <HomeBlogs />
     </Layout>
   );
 };

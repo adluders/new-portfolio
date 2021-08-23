@@ -15,6 +15,8 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@fontsource/gravitas-one": "^4.5.0",
+    "@fontsource/montserrat": "^4.5.1",
     "@sanity/block-content-to-react": "^3.0.0",
     "babel-plugin-styled-components": "^1.13.2",
     "gatsby": "^3.11.1",

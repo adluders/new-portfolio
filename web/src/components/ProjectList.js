@@ -1,29 +1,58 @@
 import React from "react";
 import styled from "styled-components";
 import ProjectItem from "./ProjectItem";
+import InnerLink from "../components/InnerLink";
 
 const Wrapper = styled.section`
+  margin: 5rem auto;
+`;
+
+const GridBox = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 1rem;
-  margin: 3rem 0;
+  gap: 2rem;
+  max-width: 75%;
+  margin: 2rem auto;
+
+  & > a:last-of-type {
+    grid-column: 1/2;
+  }
+
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
   }
 `;
 
+const Title = styled.h2`
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: "Gravitas One", cursive; ;
+`;
+
+const CtaDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const ProjectList = ({ projects }) => {
   return (
     <Wrapper>
-      {projects.map(project => (
-        <ProjectItem
-          featured={project.featured}
-          key={project.id}
-          project={project}
-        />
-      ))}
+      <Title> Projects </Title>
+      <GridBox>
+        {projects.map(project => (
+          <ProjectItem
+            featured={project.featured}
+            key={project.id}
+            project={project}
+          />
+        ))}
+
+        <CtaDiv>
+          <InnerLink userRoute="portfolio" text="view more" />
+        </CtaDiv>
+      </GridBox>
     </Wrapper>
   );
 };

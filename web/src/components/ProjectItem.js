@@ -2,18 +2,17 @@ import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 
-const Wrapper = styled(Link)`
+const Wrapper = styled.div`
   border-radius: 0.5rem;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   padding: 0.5rem;
-  height: max-content;
-  margin: auto;
   position: relative;
+`;
 
-  grid-row: ${({ featured }) => featured && "1 / 3"};
+const ProjectLink = styled(Link)`
   &:hover {
     & > div {
       display: flex;
@@ -49,26 +48,30 @@ const ImageHolder = styled.div`
   left: 0px;
 
   width: 100%; */
+  max-width: 100%;
+  max-height: max-content;
 `;
 
 const Image = styled.img`
-  display: inline-block;
   width: 100%;
   height: 100%;
   border-radius: 0.5rem;
+  object-fit: fill;
 `;
 
 const ProjectItem = ({ featured, project }) => {
   const { projectTitle, blurb, projectImg } = project;
   return (
-    <Wrapper featured={featured} to={"/"}>
-      <ImageHolder>
-        <Image src={projectImg.asset.gatsbyImageData.images.fallback.src} />
-      </ImageHolder>
-      <Details>
-        <Title>{projectTitle}</Title>
-        <SubTitle>{blurb}</SubTitle>
-      </Details>
+    <Wrapper>
+      <ProjectLink to={"/"}>
+        <ImageHolder>
+          <Image src={projectImg.asset.gatsbyImageData.images.fallback.src} />
+        </ImageHolder>
+        <Details>
+          <Title>{projectTitle}</Title>
+          <SubTitle>{blurb}</SubTitle>
+        </Details>
+      </ProjectLink>
     </Wrapper>
   );
 };

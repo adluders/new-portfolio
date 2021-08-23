@@ -18,7 +18,6 @@ const NavItems = styled.ul`
 const NavItem = styled.li``;
 
 const NavLink = styled(Link)`
-  border-bottom: 1px solid transparent;
   color: #888;
   &:hover {
     color: #000;

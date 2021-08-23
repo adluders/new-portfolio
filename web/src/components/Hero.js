@@ -25,6 +25,7 @@ const HeroMessage = styled.div`
 `;
 
 const Title = styled.h1`
+  font-family: "Gravitas One", cursive;
   font-size: 4rem;
   @media screen and (max-width: 505px) {
     font-size: 3rem;
