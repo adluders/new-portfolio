@@ -60,12 +60,15 @@ const Image = styled.img`
 `;
 
 const ProjectItem = ({ featured, project }) => {
-  const { projectTitle, blurb, projectImg } = project;
+  const { projectTitle, blurb, projectImg, slug } = project;
   return (
     <Wrapper>
-      <ProjectLink to={"/"}>
+      <ProjectLink to={`/${slug.current}`}>
         <ImageHolder>
-          <Image src={projectImg.asset.gatsbyImageData.images.fallback.src} />
+          <Image
+            src={projectImg.asset.gatsbyImageData.images.fallback.src}
+            alt={projectTitle}
+          />
         </ImageHolder>
         <Details>
           <Title>{projectTitle}</Title>
