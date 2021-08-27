@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
+import InnerLink from "./InnerLink";
 
 const Nav = styled.nav`
   display: flex;
@@ -24,6 +25,8 @@ const NavLink = styled(Link)`
   }
 `;
 
+const NavCta = styled.div``;
+
 export const navLinks = [
   {
     id: 1,
@@ -37,8 +40,8 @@ export const navLinks = [
   },
   {
     id: 3,
-    path: "/contact",
-    text: "Contact",
+    path: "/tips",
+    text: "Dev Tips",
   },
 ];
 
@@ -59,6 +62,10 @@ const Navbar = () => {
           );
         })}
       </NavItems>
+
+      <NavCta>
+        <InnerLink userRoute={"contact"} text="get in touch" />
+      </NavCta>
     </Nav>
   );
 };

@@ -1,6 +1,7 @@
 import { Link } from "gatsby";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import InnerLink from "./InnerLink";
 import { navLinks } from "./Navbar";
 
 const Wrapper = styled.nav`
@@ -20,6 +21,13 @@ const NavItems = styled.ul`
   margin-top: 0.8rem;
   width: 100%;
   height: max-content;
+  border-radius: 0.5rem;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
 `;
 
 const NavItem = styled.li`
@@ -53,17 +61,20 @@ const MobileNav = () => {
 
         <Toggler onClick={toggleNav}> C </Toggler>
       </NavHeader>
-      <NavItems>
-        {showNav &&
-          navLinks.map(link => {
-            const { id, path, text } = link;
+
+      {showNav && (
+        <NavItems>
+          {navLinks.map(linkItem => {
+            const { id, path, text } = linkItem;
             return (
               <NavItem key={id}>
                 <NavLinkItem to={path}> {text} </NavLinkItem>
               </NavItem>
             );
           })}
-      </NavItems>
+          <InnerLink userRoute="contact" text="get in touch" />
+        </NavItems>
+      )}
     </Wrapper>
   );
 };

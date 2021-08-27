@@ -1,13 +1,9 @@
 import { graphql } from "gatsby";
 import React from "react";
 import styled from "styled-components";
+import Banner from "../../components/Banner";
 import Layout from "../../components/Layout";
 import ProjectItem from "../../components/ProjectItem";
-
-const Title = styled.h1`
-  font-family: "Gravitas One", cursive;
-  font-size: 2.5rem;
-`;
 
 const Wrapper = styled.section`
   display: grid;
@@ -20,7 +16,7 @@ const Portfolio = ({ data }) => {
   console.log(data);
   return (
     <Layout>
-      <Title>My Work</Title>
+      <Banner title="my work" subtitle="here are some of my favorite project" />
       <Wrapper>
         {data.allSanityProject.nodes.map(project => (
           <ProjectItem project={project} />

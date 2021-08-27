@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
 
   return (
     <Wrapper>
-      {screenSize < 504 ? <MobileNav /> : <Navbar />}
+      {screenSize < 678 ? <MobileNav /> : <Navbar />}
       {children}
       <Footer />
     </Wrapper>
