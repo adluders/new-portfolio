@@ -15,7 +15,7 @@ const Wrapper = styled.section`
 const Portfolio = ({ data }) => {
   console.log(data);
   return (
-    <Layout>
+    <Layout title="Portfolio">
       <Banner title="my work" subtitle="here are some of my favorite project" />
       <Wrapper>
         {data.allSanityProject.nodes.map(project => (

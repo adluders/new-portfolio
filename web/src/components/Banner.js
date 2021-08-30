@@ -39,7 +39,7 @@ Banner.proptyes = {
 
 Banner.defaultProps = {
   title: "Title",
-  subtitle: "Subtitle",
+  subtitle: "",
 };
 
 export default Banner;

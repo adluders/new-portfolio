@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import HomeBlogs from "../components/HomeBlogs";
 import Layout from "../components/Layout";
 import ProjectList from "../components/ProjectList";
+import SEO from "../components/SEO";
 
 const IndexPage = ({ data }) => {
   const homeProjects = data.allSanityProject.nodes.filter(
@@ -11,7 +12,7 @@ const IndexPage = ({ data }) => {
   );
 
   return (
-    <Layout>
+    <Layout title="Home">
       <Hero />
       <ProjectList projects={homeProjects} />
       <HomeBlogs />

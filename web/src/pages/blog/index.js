@@ -14,7 +14,7 @@ const Wrapper = styled.section`
 
 const BlogIndex = () => {
   return (
-    <Layout>
+    <Layout title="Blog">
       <Banner
         title="my articles"
         subtitle="Come get inside the mind of a self-taught developer. Here you can read about different pain points and the various experiences I faced teaching myself how to code"

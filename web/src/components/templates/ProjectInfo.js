@@ -30,7 +30,7 @@ const DemoLink = styled.a`
 const ProjectInfo = ({ pageContext }) => {
   const { projectTitle, blurb, projectImg, projectDemo } = pageContext;
   return (
-    <Layout>
+    <Layout title={projectTitle}>
       <TopInfo>
         <Title> {projectTitle} </Title>
         <Subtitle> {blurb} </Subtitle>

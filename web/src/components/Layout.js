@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import MobileNav from "./MobileNav";
 import useResizer from "../hooks/useResizer";
+import SEO from "./SEO";
 
 const Wrapper = styled.div`
   display: flex;
@@ -17,11 +18,12 @@ const Wrapper = styled.div`
   }
 `;
 
-const Layout = ({ children }) => {
+const Layout = ({ children, title }) => {
   const screenSize = useResizer();
 
   return (
     <Wrapper>
+      <SEO title={title} />
       {screenSize < 678 ? <MobileNav /> : <Navbar />}
       {children}
       <Footer />
