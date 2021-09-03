@@ -19,7 +19,7 @@ const Portfolio = ({ data }) => {
       <Banner title="my work" subtitle="here are some of my favorite project" />
       <Wrapper>
         {data.allSanityProject.nodes.map(project => (
-          <ProjectItem project={project} />
+          <ProjectItem key={project.id} project={project} />
         ))}
       </Wrapper>
     </Layout>
@@ -33,7 +33,6 @@ export const query = graphql`
         id
         projectTitle
         blurb
-        featured
         showOnHome
         projectImg {
           asset {

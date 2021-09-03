@@ -27,6 +27,7 @@ module.exports = {
       options: {
         name: "images",
         path: "./src/images/",
+        watchMode: true,
       },
       __key: "images",
     },

@@ -3,6 +3,8 @@ import Layout from "../../components/Layout";
 import Blog from "../../components/Blog";
 import styled from "styled-components";
 import Banner from "../../components/Banner";
+import { graphql } from "gatsby";
+import PortableText from "@sanity/block-content-to-react";
 
 const Wrapper = styled.section`
   max-width: 75%;
@@ -12,7 +14,15 @@ const Wrapper = styled.section`
   gap: 5rem;
 `;
 
-const BlogIndex = () => {
+const serializer = {
+  types: {
+    _rawBlog: props => <pre> {JSON.stringify(props, null, 2)} </pre>,
+  },
+};
+
+const BlogIndex = ({ data }) => {
+  console.log(data.sanityBlog);
+  // const text = data.allSanityBlog.nodes.map(text => text._rawBlog);
   return (
     <Layout title="Blog">
       <Banner
@@ -26,8 +36,26 @@ const BlogIndex = () => {
         <Blog />
         <Blog />
       </Wrapper>
+      <PortableText
+        blocks={data.sanityBlog._rawBlog}
+        serializers={serializer}
+      />
+      {/*
+      <div style={{ maxWidth: "50%", textAlign: "left" }}>
+        <pre style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}>
+          {JSON.stringify(data.sanityBlog, null, 2)}
+        </pre>
+      </div> */}
     </Layout>
   );
 };
+
+export const query = graphql`
+  {
+    sanityBlog {
+      _rawBlog
+    }
+  }
+`;
 
 export default BlogIndex;

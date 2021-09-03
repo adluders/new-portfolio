@@ -17,6 +17,9 @@ export default {
       title: "Image",
       name: "projectImg",
       type: "image",
+      options: {
+        hotspot: true,
+      },
     },
     {
       title: "Slug",
@@ -37,9 +40,14 @@ export default {
       type: "boolean",
     },
     {
-      title: "Featured Project",
-      name: "featured",
-      type: "boolean",
+      title: "Project Description",
+      name: "description",
+      type: "array",
+      of: [
+        {
+          type: "block",
+        },
+      ],
     },
   ],
 };

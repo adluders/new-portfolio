@@ -7,6 +7,7 @@ exports.createPages = async ({ graphql, actions }) => {
     {
       allSanityProject {
         nodes {
+          _rawDescription
           id
           projectTitle
           blurb
