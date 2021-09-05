@@ -6,7 +6,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import MobileNav from "./MobileNav";
 import useResizer from "../hooks/useResizer";
-import Seo from "./Seo";
+import Seo from "../components/Seo";
 
 const Wrapper = styled.div`
   display: flex;
