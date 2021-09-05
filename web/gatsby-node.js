@@ -17,6 +17,16 @@ exports.createPages = async ({ graphql, actions }) => {
               gatsbyImageData
             }
           }
+          tabletImg {
+            asset {
+              gatsbyImageData
+            }
+          }
+          mobileImg {
+            asset {
+              gatsbyImageData
+            }
+          }
           slug {
             current
           }

@@ -22,6 +22,22 @@ export default {
       },
     },
     {
+      title: "Tablet Image",
+      name: "tabletImg",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      title: "Mobile Image",
+      name: "mobileImg",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    },
+    {
       title: "Slug",
       name: "slug",
       type: "slug",

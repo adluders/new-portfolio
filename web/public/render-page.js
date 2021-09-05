@@ -8891,13 +8891,16 @@ const Buttons = styled_components__WEBPACK_IMPORTED_MODULE_4__.default.div.withC
 })(["display:flex;flex-direction:column;justify-content:space-between;align-items:center;gap:1rem;"]);
 const Details = styled_components__WEBPACK_IMPORTED_MODULE_4__.default.section.withConfig({
   displayName: "ProjectInfo__Details"
-})(["display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;align-items:center;margin-top:2rem;@media screen and (max-width:768px){display:flex;flex-direction:column;}"]);
+})(["grid-template-columns:repeat(2,1fr);grid-template-rows:1fr,1fr;gap:2rem;margin-top:2rem;@media screen and (max-width:768px){display:flex;flex-direction:column;}"]);
 const Graphics = styled_components__WEBPACK_IMPORTED_MODULE_4__.default.div.withConfig({
   displayName: "ProjectInfo__Graphics"
-})([""]);
+})(["display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:1fr 1fr;"]);
+const Graphic = styled_components__WEBPACK_IMPORTED_MODULE_4__.default.div.withConfig({
+  displayName: "ProjectInfo__Graphic"
+})(["h2{margin-bottom:0.4rem;}img{border:4px solid red;}&::nth-of-type(3){grid-row:2/3;}"]);
 const Blurb = styled_components__WEBPACK_IMPORTED_MODULE_4__.default.div.withConfig({
   displayName: "ProjectInfo__Blurb"
-})([""]);
+})(["h1,h2,h3,h4,h5{margin:1rem 0;}p{line-height:2rem;}"]);
 const LeadText = styled_components__WEBPACK_IMPORTED_MODULE_4__.default.h3.withConfig({
   displayName: "ProjectInfo__LeadText"
 })(["font-size:1.7rem;margin-bottom:1rem;&::first-letter{text-transform:capitalize;}"]);
@@ -8913,6 +8916,8 @@ const ProjectInfo = ({
     projectTitle,
     blurb,
     projectImg,
+    mobileImg,
+    tabletImg,
     projectDemo
   } = pageContext;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Layout__WEBPACK_IMPORTED_MODULE_3__.default, {
@@ -8927,11 +8932,19 @@ const ProjectInfo = ({
     },
     userRoute: "portfolio",
     text: "back to projects"
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Details, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Graphics, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_5__.GatsbyImage, {
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Details, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Graphics, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Graphic, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Subtitle, null, "Desktop View"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_5__.GatsbyImage, {
     image: projectImg.asset.gatsbyImageData,
     alt: projectTitle,
     placeholder: "blurred"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Blurb, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(LeadText, null, "more about this project"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((_sanity_block_content_to_react__WEBPACK_IMPORTED_MODULE_1___default()), {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Graphic, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Subtitle, null, "Mobile Look"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_5__.GatsbyImage, {
+    image: mobileImg.asset.gatsbyImageData,
+    alt: projectTitle,
+    placeholder: "blurred"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Graphic, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Subtitle, null, "Tablet"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_5__.GatsbyImage, {
+    image: tabletImg.asset.gatsbyImageData,
+    alt: projectTitle,
+    placeholder: "blurred"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Blurb, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(LeadText, null, "more about this project"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((_sanity_block_content_to_react__WEBPACK_IMPORTED_MODULE_1___default()), {
     blocks: _rawDescription
   }))));
 };
