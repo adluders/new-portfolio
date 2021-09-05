@@ -1,10 +1,17 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import InnerLink from "./InnerLink";
 
 const Wrapper = styled.section`
   border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
   background-color: purple;
+  @media screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const HeroMessage = styled.div`
@@ -37,16 +44,39 @@ const SubTitle = styled.p`
   margin: 1rem 0 1.5rem;
 `;
 
-const Hero = () => {
+const Headshot = styled.div`
+  margin: 1rem auto;
+  border-radius: 50%;
+  img {
+    display: inline-block;
+    border-radius: 50%;
+  }
+`;
+
+const Hero = ({ name, headshot }) => {
   return (
     <Wrapper>
       <HeroMessage>
-        <Title>adler luders</Title>
+        <Title>{name}</Title>
         <SubTitle>orlando based developer</SubTitle>
         <InnerLink userRoute="portfolio" text="view my work" />
       </HeroMessage>
+
+      <Headshot>
+        <GatsbyImage image={headshot} alt={name} placeholder={"blurred"} />
+      </Headshot>
     </Wrapper>
   );
+};
+
+Hero.proptype = {
+  name: PropTypes.string.isRequired,
+  headshot: PropTypes.object.isRequired,
+};
+
+Hero.defaultProps = {
+  name: "",
+  headshot: "",
 };
 
 export default Hero;

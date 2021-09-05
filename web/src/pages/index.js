@@ -1,5 +1,6 @@
 import { graphql } from "gatsby";
 import React from "react";
+import About from "../components/About";
 import Hero from "../components/Hero";
 import HomeBlogs from "../components/HomeBlogs";
 import Layout from "../components/Layout";
@@ -12,7 +13,11 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout title="Home">
-      <Hero />
+      <Hero
+        name={data.sanityAuthor.name}
+        headshot={data.sanityAuthor.headshot.asset.gatsbyImageData}
+      />
+      <About info={data.sanityAuthor._rawBio} />
       <ProjectList projects={homeProjects} />
       <HomeBlogs />
     </Layout>
@@ -34,6 +39,16 @@ export const query = graphql`
         }
         slug {
           current
+        }
+      }
+    }
+
+    sanityAuthor {
+      name
+      _rawBio
+      headshot {
+        asset {
+          gatsbyImageData
         }
       }
     }

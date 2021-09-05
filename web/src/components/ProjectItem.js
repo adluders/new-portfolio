@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -44,10 +45,6 @@ const SubTitle = styled.p`
 `;
 
 const ImageHolder = styled.div`
-  /* top: 0px;
-  left: 0px;
-
-  width: 100%; */
   max-width: 100%;
   max-height: max-content;
 `;
@@ -59,7 +56,7 @@ const Image = styled.img`
   object-fit: fill;
 `;
 
-const ProjectItem = ({ featured, project }) => {
+const ProjectItem = ({ project }) => {
   const { projectTitle, blurb, projectImg, slug } = project;
   return (
     <Wrapper>
@@ -77,6 +74,14 @@ const ProjectItem = ({ featured, project }) => {
       </ProjectLink>
     </Wrapper>
   );
+};
+
+ProjectItem.proptype = {
+  project: PropTypes.object.isRequired,
+};
+
+ProjectItem.defaultProps = {
+  project: {},
 };
 
 export default ProjectItem;

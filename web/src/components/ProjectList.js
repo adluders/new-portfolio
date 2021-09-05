@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import ProjectItem from "./ProjectItem";
 import InnerLink from "../components/InnerLink";
@@ -55,6 +56,14 @@ const ProjectList = ({ projects }) => {
       </GridBox>
     </Wrapper>
   );
+};
+
+ProjectList.proptype = {
+  projects: PropTypes.array.isRequired,
+};
+
+ProjectList.defaultProps = {
+  projects: [],
 };
 
 export default ProjectList;

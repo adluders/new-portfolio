@@ -18,9 +18,7 @@ const Header = styled.section`
   }
 `;
 
-const Content = styled.div`
-  /* border: solid blue; */
-`;
+const Content = styled.div``;
 
 const Title = styled.h1`
   font-size: 3rem;
@@ -40,7 +38,6 @@ const Buttons = styled.div`
 `;
 
 const Details = styled.section`
-  /* display: grid; */
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr, 1fr;
   gap: 2rem;
@@ -60,21 +57,24 @@ const Graphics = styled.div`
     align-items: center;
     text-align: center;
   }
-  /* display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr 1fr; */
 `;
 
 const Graphic = styled.div`
   h2 {
     margin-bottom: 0.4rem;
   }
-  &::nth-of-type(3) {
-    grid-row: 2/3;
+  img {
+    border-radius: 0.5rem;
   }
 `;
 
+const ImageWrapper = styled.div`
+  border-radius: 0.5rem;
+  box-shadow: 1px 3px 5px 5px rgba(0, 0, 0, 0.15);
+`;
+
 const Blurb = styled.div`
+  margin-top: 2rem;
   h1,
   h2,
   h3,
@@ -103,15 +103,8 @@ const DemoLink = styled.a`
 `;
 
 const ProjectInfo = ({ pageContext }) => {
-  const {
-    _rawDescription,
-    projectTitle,
-    blurb,
-    projectImg,
-    mobileImg,
-    tabletImg,
-    projectDemo,
-  } = pageContext;
+  const { _rawDescription, projectTitle, blurb, projectImg, projectDemo } =
+    pageContext;
   return (
     <Layout title={projectTitle}>
       <Header>
@@ -126,7 +119,7 @@ const ProjectInfo = ({ pageContext }) => {
           <InnerLink
             style={{ backgroundColor: "red !important" }}
             userRoute="portfolio"
-            text="back to projects"
+            text="view more projects"
           />
         </Buttons>
       </Header>
@@ -134,30 +127,13 @@ const ProjectInfo = ({ pageContext }) => {
       <Details>
         <Graphics>
           <Graphic>
-            <Subtitle>Desktop View</Subtitle>
-            <GatsbyImage
-              image={projectImg.asset.gatsbyImageData}
-              alt={projectTitle}
-              placeholder="blurred"
-            />
-          </Graphic>
-
-          <Graphic>
-            <Subtitle>Mobile Look</Subtitle>
-            <GatsbyImage
-              image={mobileImg.asset.gatsbyImageData}
-              alt={projectTitle}
-              placeholder="blurred"
-            />
-          </Graphic>
-
-          <Graphic>
-            <Subtitle>Tablet</Subtitle>
-            <GatsbyImage
-              image={tabletImg.asset.gatsbyImageData}
-              alt={projectTitle}
-              placeholder="blurred"
-            />
+            <ImageWrapper>
+              <GatsbyImage
+                image={projectImg.asset.gatsbyImageData}
+                alt={projectTitle}
+                placeholder="blurred"
+              />
+            </ImageWrapper>
           </Graphic>
         </Graphics>
 
