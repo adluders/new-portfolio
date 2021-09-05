@@ -6,7 +6,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import MobileNav from "./MobileNav";
 import useResizer from "../hooks/useResizer";
-import Seo from "../components/Seo";
+import SEO from "./SEO";
 
 const Wrapper = styled.div`
   display: flex;
@@ -24,7 +24,7 @@ const Layout = ({ children, title }) => {
 
   return (
     <Wrapper style={globalStyles}>
-      <Seo title={title} />
+      <SEO title={title} />
       {screenSize < 678 ? <MobileNav /> : <Navbar />}
       {children}
       <Footer />
