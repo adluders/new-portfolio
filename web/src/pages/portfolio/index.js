@@ -13,7 +13,6 @@ const Wrapper = styled.section`
 `;
 
 const Portfolio = ({ data }) => {
-  console.log(data);
   return (
     <Layout title="Portfolio">
       <Banner title="my work" subtitle="here are some of my favorite project" />

@@ -7,8 +7,9 @@ import styled from "styled-components";
 const Wrapper = styled(Link)`
   border-radius: 0.5rem;
   border: 1px solid;
-  background-color: #fff;
-  padding: 1rem 2.5rem;
+  background-color: #5f6caf;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
   font-size: 1.2rem;
   text-transform: capitalize;
   letter-spacing: 0.1rem;
@@ -18,10 +19,10 @@ const Wrapper = styled(Link)`
   max-width: max-content;
   border: none;
   &:hover {
-    background-color: #eee;
+    background-color: #374bad;
   }
   &:focus {
-    color: black;
+    transform: scale(0.98);
   }
 `;
 

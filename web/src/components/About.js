@@ -7,7 +7,11 @@ const Wrapper = styled.section`
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 4rem;
-  margin: 3rem 1.5rem;
+  margin: 3rem 0;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 2rem 0;
+
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;

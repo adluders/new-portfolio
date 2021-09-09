@@ -8,10 +8,13 @@ import PortableText from "@sanity/block-content-to-react";
 
 const Wrapper = styled.section`
   max-width: 75%;
-  margin: 3rem auto 0;
+  margin: 3rem auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 5rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0.5rem;
 `;
 
 const serializer = {
@@ -36,11 +39,12 @@ const BlogIndex = ({ data }) => {
         <Blog />
         <Blog />
       </Wrapper>
+
+      {/*
       <PortableText
         blocks={data.sanityBlog._rawBlog}
         serializers={serializer}
       />
-      {/*
       <div style={{ maxWidth: "50%", textAlign: "left" }}>
         <pre style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}>
           {JSON.stringify(data.sanityBlog, null, 2)}

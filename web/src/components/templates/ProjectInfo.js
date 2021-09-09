@@ -96,7 +96,14 @@ const LeadText = styled.h3`
 `;
 
 const DemoLink = styled.a`
+  border-radius: 0.5rem;
+  border: 1px solid;
+  background-color: #7a5faf;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
   text-transform: capitalize;
+  letter-spacing: 0.1rem;
   &:hover {
     text-decoration: underline;
   }

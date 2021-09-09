@@ -8,7 +8,7 @@ const Wrapper = styled.section`
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
-  background-color: purple;
+  background-color: #fff;
   @media screen and (max-width: 768px) {
     flex-direction: column-reverse;
   }
@@ -17,7 +17,7 @@ const Wrapper = styled.section`
 const HeroMessage = styled.div`
   text-transform: capitalize;
 
-  color: #fff;
+  color: #000;
   margin: 2rem;
 
   a {

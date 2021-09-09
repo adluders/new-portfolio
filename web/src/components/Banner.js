@@ -5,8 +5,8 @@ import useResizer from "../hooks/useResizer";
 
 const Wrapper = styled.section`
   border-radius: 0.5rem;
-  background-color: purple;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   padding: 2rem;
   text-align: center;
 `;

@@ -27,7 +27,7 @@ const Details = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(159, 91, 164, 0.7);
+  background-color: rgba(95, 108, 175, 0.85);
   display: none;
   align-items: center;
   justify-content: center;

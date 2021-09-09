@@ -4,6 +4,9 @@ import Blog from "./Blog";
 
 const Wrapper = styled.section`
   margin-bottom: 5rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  padding: 2rem;
 `;
 
 const Title = styled.h2`
@@ -26,7 +29,6 @@ const HomeBlogs = () => {
     <Wrapper>
       <Title>Articles</Title>
       <Blogs>
-        <Blog />
         <Blog />
         <Blog />
         <Blog />
