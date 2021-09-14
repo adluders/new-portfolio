@@ -14,10 +14,10 @@ const Contact = ({ data }) => {
   );
 };
 
-export const query = graphql`
-allAdlerTweet{
-  totalCount
-}
-`;
+// export const query = graphql`
+// allAdlerTweet{
+//  totalCount
+// }
+// `;
 
 export default Contact;
