@@ -60,7 +60,7 @@ const ProjectItem = ({ project }) => {
   const { projectTitle, blurb, projectImg, slug } = project;
   return (
     <Wrapper>
-      <ProjectLink to={`/${slug.current}`}>
+      <ProjectLink to={`/work/${slug.current}`}>
         <ImageHolder>
           <Image
             src={projectImg.asset.gatsbyImageData.images.fallback.src}

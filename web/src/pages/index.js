@@ -11,15 +11,18 @@ const IndexPage = ({ data }) => {
     project => project.showOnHome === true
   );
 
+  const blogs = data.allSanityBlog.nodes.filter(blog => blog.featured === true);
+
+  console.log(blogs);
+
   return (
     <Layout title="Home">
       <Hero
         name={data.sanityAuthor.name}
         headshot={data.sanityAuthor.headshot.asset.gatsbyImageData}
       />
-      <About info={data.sanityAuthor._rawBio} />
       <ProjectList projects={homeProjects} />
-      <HomeBlogs />
+      <HomeBlogs blogs={blogs} />
     </Layout>
   );
 };
@@ -38,6 +41,17 @@ export const query = graphql`
           }
         }
         slug {
+          current
+        }
+      }
+    }
+
+    allSanityBlog {
+      nodes {
+        blogTitle
+        featured
+        topic
+        blogLink {
           current
         }
       }

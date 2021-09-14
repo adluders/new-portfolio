@@ -5,10 +5,8 @@ import styled from "styled-components";
 import InnerLink from "./InnerLink";
 
 const Wrapper = styled.section`
-  border-radius: 0.5rem;
   display: flex;
   align-items: center;
-  background-color: #fff;
   @media screen and (max-width: 768px) {
     flex-direction: column-reverse;
   }

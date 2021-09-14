@@ -3,7 +3,7 @@ const path = require("path");
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const projects = await graphql(`
+  const results = await graphql(`
     {
       allSanityProject {
         nodes {
@@ -32,16 +32,37 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allSanityBlog {
+        nodes {
+          _rawBlog
+          blogTitle
+          blogLink {
+            current
+          }
+        }
+      }
     }
   `);
+
+  console.log(results);
 
   const projectTemplate = path.resolve(
     `src/components/templates/ProjectInfo.js`
   );
 
-  projects.data.allSanityProject.nodes.forEach(node => {
+  const blogTemplate = path.resolve(`src/components/templates/BlogDetail.js`);
+
+  results.data.allSanityBlog.nodes.forEach(node => {
     createPage({
-      path: `/${node.slug.current}`,
+      path: `/blog/${node.blogLink.current}`,
+      component: blogTemplate,
+      context: node,
+    });
+  });
+
+  results.data.allSanityProject.nodes.forEach(node => {
+    createPage({
+      path: `/work/${node.slug.current}`,
       component: projectTemplate,
       context: node,
     });

@@ -11,7 +11,7 @@ export default {
     {
       name: "topic",
       title: "Topic",
-      type: "string",
+      type: "text",
     },
     {
       name: "articleImg",

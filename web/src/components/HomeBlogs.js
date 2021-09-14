@@ -24,14 +24,14 @@ const Blogs = styled.div`
   justify-content: space-between;
 `;
 
-const HomeBlogs = () => {
+const HomeBlogs = ({ blogs }) => {
   return (
     <Wrapper>
       <Title>Articles</Title>
       <Blogs>
-        <Blog />
-        <Blog />
-        <Blog />
+        {blogs.map(blog => (
+          <Blog key={Math.random()} blog={blog} />
+        ))}
       </Blogs>
     </Wrapper>
   );

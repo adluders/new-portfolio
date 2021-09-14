@@ -19,14 +19,12 @@ const SubTitle = styled.p`
   margin: 1rem 0;
 `;
 
-const Blog = () => {
+const Blog = ({ blog }) => {
+  const { blogLink, blogTitle, topic } = blog;
   return (
-    <Wrapper to="/blog">
-      <Title> Title </Title>
-      <SubTitle>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae,
-        eveniet.
-      </SubTitle>
+    <Wrapper to={`/blog/${blogLink.current}`}>
+      <Title> {blogTitle} </Title>
+      <SubTitle>{topic}</SubTitle>
     </Wrapper>
   );
 };
