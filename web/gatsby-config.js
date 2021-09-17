@@ -20,16 +20,15 @@ module.exports = {
     {
       resolve: `gatsby-source-twitter`,
       options: {
-        credetials: {
+        credentials: {
           consumer_key: process.env.CONSUMER_KEY,
           consumer_secret: process.env.CONSUMER_SECRET,
           bearer_token: process.env.BEARER_TOKEN,
         },
         queries: {
-          adlerTweet: {
-            endpoint: "search/tweets",
+          adlertweets: {
+            endpoint: "statuses/user_timeline",
             params: {
-              tweet_mode: "extended",
               screen_name: "just_a_devguy",
             },
           },

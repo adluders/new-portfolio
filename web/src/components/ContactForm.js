@@ -23,8 +23,38 @@ const Input = styled.input`
   padding: 0.5rem;
   border-radius: 0.5rem;
   border: solid #ccc;
-  /* border: none;
-  border-bottom: 1px #bbb solid; */
+`;
+
+const TextArea = styled.textarea`
+  resize: none;
+  border-radius: 0.5rem;
+  border: solid #ccc;
+  padding: 0.5rem;
+`;
+
+const Submit = styled.button`
+  border-radius: 0.5rem;
+  border: 1px solid;
+  background-color: #5f6caf;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+
+  cursor: pointer;
+
+  margin-top: 2rem;
+  align-self: flex-end;
+
+  width: 50%;
+
+  &:hover {
+    background-color: #374bad;
+  }
+  &:focus {
+    transform: scale(0.98);
+  }
 `;
 
 const ContactForm = () => {
@@ -45,9 +75,13 @@ const ContactForm = () => {
         </Label>
         <Label>
           Message
-          <textarea name="message" id="message" rows="5" />
+          <TextArea
+            name="message"
+            placeholder="Here is how we can work together..."
+            rows="5"
+          />
         </Label>
-        <button type="submit">Send</button>
+        <Submit type="submit">Send</Submit>
       </Form>
     </Wrapper>
   );

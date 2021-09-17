@@ -15,6 +15,7 @@
 exports.ssrComponents = {
   "component---cache-dev-404-page-js": preferDefault(__webpack_require__(/*! ./.cache/dev-404-page.js */ "./.cache/dev-404-page.js")),
   "component---src-pages-404-js": preferDefault(__webpack_require__(/*! ./src/pages/404.js */ "./src/pages/404.js")),
+  "component---src-pages-contact-index-js": preferDefault(__webpack_require__(/*! ./src/pages/contact/index.js */ "./src/pages/contact/index.js")),
   "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js"))
   }
 
@@ -8332,6 +8333,57 @@ const About = ({
 
 /***/ }),
 
+/***/ "./src/components/Banner.js":
+/*!**********************************!*\
+  !*** ./src/components/Banner.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+/* harmony import */ var _hooks_useResizer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../hooks/useResizer */ "./src/hooks/useResizer.js");
+
+
+
+
+const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_3__.default.section.withConfig({
+  displayName: "Banner__Wrapper"
+})(["border-radius:0.5rem;background-color:#fff;color:#000;padding:2rem;text-align:center;"]);
+const Title = styled_components__WEBPACK_IMPORTED_MODULE_3__.default.h1.withConfig({
+  displayName: "Banner__Title"
+})(["font-family:\"Gravitas One\",cursive;font-size:2.5rem;text-transform:capitalize;"]);
+const SubTitle = styled_components__WEBPACK_IMPORTED_MODULE_3__.default.p.withConfig({
+  displayName: "Banner__SubTitle"
+})(["font-size:1.2rem;margin-top:0.5rem;"]);
+
+const Banner = ({
+  title,
+  subtitle
+}) => {
+  const screenSize = (0,_hooks_useResizer__WEBPACK_IMPORTED_MODULE_2__.default)();
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Wrapper, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Title, null, title), screenSize > 768 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(SubTitle, null, " ", subtitle, " "));
+};
+
+Banner.proptyes = {
+  title: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
+  subtitle: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired)
+};
+Banner.defaultProps = {
+  title: "Title",
+  subtitle: ""
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Banner);
+
+/***/ }),
+
 /***/ "./src/components/Blog.js":
 /*!********************************!*\
   !*** ./src/components/Blog.js ***!
@@ -8375,6 +8427,70 @@ const Blog = ({
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Blog);
+
+/***/ }),
+
+/***/ "./src/components/ContactForm.js":
+/*!***************************************!*\
+  !*** ./src/components/ContactForm.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+
+
+const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.section.withConfig({
+  displayName: "ContactForm__Wrapper"
+})([""]);
+const Form = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.form.withConfig({
+  displayName: "ContactForm__Form"
+})(["display:flex;flex-direction:column;"]);
+const Label = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.label.withConfig({
+  displayName: "ContactForm__Label"
+})(["display:flex;flex-direction:column;font-size:1.2rem;font-family:\"Gravitas One\";font-weight:100;margin-top:1.5rem;"]);
+const Input = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.input.withConfig({
+  displayName: "ContactForm__Input"
+})(["margin-top:0.5rem;font-size:0.8rem;padding:0.5rem;border-radius:0.5rem;border:solid #ccc;"]);
+const TextArea = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.textarea.withConfig({
+  displayName: "ContactForm__TextArea"
+})(["resize:none;border-radius:0.5rem;border:solid #ccc;padding:0.5rem;"]);
+const Submit = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.button.withConfig({
+  displayName: "ContactForm__Submit"
+})(["border-radius:0.5rem;border:1px solid;background-color:#5f6caf;color:#fff;padding:0.8rem 1.5rem;font-size:1.2rem;text-transform:capitalize;letter-spacing:0.1rem;cursor:pointer;margin-top:2rem;align-self:flex-end;width:50%;&:hover{background-color:#374bad;}&:focus{transform:scale(0.98);}"]);
+
+const ContactForm = () => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Wrapper, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Form, {
+    method: "post",
+    action: "#"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Label, null, "Name", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Input, {
+    type: "text",
+    name: "name",
+    placeholder: "John Doe"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Label, null, "Email", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Input, {
+    type: "email",
+    name: "email",
+    placeholder: "email@example.com"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Label, null, "Subject", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Input, {
+    type: "text",
+    name: "subject",
+    placeholder: "New Project Idea..."
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Label, null, "Message", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(TextArea, {
+    name: "message",
+    placeholder: "Here is how we can work together...",
+    rows: "5"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Submit, {
+    type: "submit"
+  }, "Send")));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ContactForm);
 
 /***/ }),
 
@@ -8957,6 +9073,46 @@ SEO.defaultProps = {
 
 /***/ }),
 
+/***/ "./src/components/TwitterDeck.js":
+/*!***************************************!*\
+  !*** ./src/components/TwitterDeck.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+
+
+const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.section.withConfig({
+  displayName: "TwitterDeck__Wrapper"
+})([""]);
+const Title = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.h3.withConfig({
+  displayName: "TwitterDeck__Title"
+})(["font-family:\"Gravitas One\";text-transform:capitalize;"]);
+const Tweets = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div.withConfig({
+  displayName: "TwitterDeck__Tweets"
+})(["background-color:#1da1f2;border-radius:0.5rem;display:flex;flex-direction:column;gap:1.2rem;padding:0.5rem;"]);
+const Card = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div.withConfig({
+  displayName: "TwitterDeck__Card"
+})(["background-color:#fff;border-radius:0.5rem;padding:0.8rem;font-size:1.1rem;"]);
+const Tweet = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.p.withConfig({
+  displayName: "TwitterDeck__Tweet"
+})([""]);
+
+const TwitterDeck = () => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Wrapper, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Title, null, "let's get social! "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Tweets, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Tweet, null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, recusandae?")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Tweet, null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, recusandae?")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Tweet, null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, recusandae?"))));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TwitterDeck);
+
+/***/ }),
+
 /***/ "./src/hooks/useResizer.js":
 /*!*********************************!*\
   !*** ./src/hooks/useResizer.js ***!
@@ -9048,6 +9204,52 @@ const NotFoundPage = () => {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NotFoundPage);
+
+/***/ }),
+
+/***/ "./src/pages/contact/index.js":
+/*!************************************!*\
+  !*** ./src/pages/contact/index.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/Layout */ "./src/components/Layout.js");
+/* harmony import */ var _components_Banner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Banner */ "./src/components/Banner.js");
+/* harmony import */ var _components_ContactForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/ContactForm */ "./src/components/ContactForm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+/* harmony import */ var _components_TwitterDeck__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/TwitterDeck */ "./src/components/TwitterDeck.js");
+
+
+
+
+
+
+const Details = styled_components__WEBPACK_IMPORTED_MODULE_5__.default.section.withConfig({
+  displayName: "contact__Details"
+})(["display:grid;grid-template-columns:repeat(2,1fr);gap:5rem;margin-bottom:3rem;"]);
+
+const Contact = ({
+  data
+}) => {
+  data.allTwitterStatusesUserTimelineAdlertweets.nodes.map(tweet => {
+    console.log(tweet);
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_1__.default, {
+    title: "Contact"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Banner__WEBPACK_IMPORTED_MODULE_2__.default, {
+    title: "contact info"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Details, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ContactForm__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_TwitterDeck__WEBPACK_IMPORTED_MODULE_4__.default, null)));
+};
+
+const query = "3312856095";
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Contact);
 
 /***/ }),
 
