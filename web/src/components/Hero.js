@@ -1,23 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { GatsbyImage } from "gatsby-plugin-image";
+import PortableText from "@sanity/block-content-to-react";
 import styled from "styled-components";
 import InnerLink from "./InnerLink";
 
 const Wrapper = styled.section`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
   align-items: center;
+  margin: 2rem 0 4rem 2rem;
   @media screen and (max-width: 768px) {
+    display: flex;
     flex-direction: column-reverse;
   }
 `;
 
 const HeroMessage = styled.div`
-  text-transform: capitalize;
-
-  color: #000;
-  margin: 2rem;
-
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   a {
     @media screen and (max-width: 768px) {
       margin: 0 auto;
@@ -30,6 +33,7 @@ const HeroMessage = styled.div`
 `;
 
 const Title = styled.h1`
+  text-transform: capitalize;
   font-family: "Gravitas One", cursive;
   font-size: 4rem;
   @media screen and (max-width: 505px) {
@@ -37,13 +41,9 @@ const Title = styled.h1`
   }
 `;
 
-const SubTitle = styled.p`
-  font-size: 1.5rem;
-  margin: 1rem 0 1.5rem;
-`;
-
 const Headshot = styled.div`
-  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
   border-radius: 50%;
   img {
     display: inline-block;
@@ -51,12 +51,12 @@ const Headshot = styled.div`
   }
 `;
 
-const Hero = ({ name, headshot }) => {
+const Hero = ({ name, headshot, bio }) => {
   return (
     <Wrapper>
       <HeroMessage>
         <Title>{name}</Title>
-        <SubTitle>orlando based developer</SubTitle>
+        <PortableText blocks={bio} />
         <InnerLink userRoute="portfolio" text="view my work" />
       </HeroMessage>
 

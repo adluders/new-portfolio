@@ -55,6 +55,9 @@ const Submit = styled.button`
   &:focus {
     transform: scale(0.98);
   }
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const ContactForm = () => {

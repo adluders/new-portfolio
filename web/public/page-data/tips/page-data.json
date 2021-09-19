@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-pages-tips-index-js","path":"/tips/","result":{"pageContext":{}},"staticQueryHashes":["1942088059"]}
+{"componentChunkName":"component---src-pages-tips-index-js","path":"/tips/","result":{"data":{"allSanityTip":{"nodes":[{"_rawInfo":[{"_key":"aea2e07984c1","_type":"block","children":[{"_key":"5f7d82280d11","_type":"span","marks":[],"text":"Plain description"}],"markDefs":[],"style":"normal"}],"id":"-9c1b0566-e389-54f4-a105-89af7190d46a","tip":"How to clone a repo"}]}},"pageContext":{}},"staticQueryHashes":["1942088059"]}

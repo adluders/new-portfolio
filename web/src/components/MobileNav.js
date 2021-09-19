@@ -1,6 +1,7 @@
 import { Link } from "gatsby";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { IoMenu, IoClose } from "react-icons/io5";
 import InnerLink from "./InnerLink";
 import { navLinks } from "./Navbar";
 
@@ -35,12 +36,16 @@ const NavItem = styled.li`
 `;
 
 const NavLinkItem = styled(Link)`
-  color: #555;
+  color: #000;
 `;
 
 const Toggler = styled.button`
-  border: solid blue;
   background-color: transparent;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
 `;
 
 const MobileNav = () => {
@@ -59,7 +64,9 @@ const MobileNav = () => {
           <h1>AL</h1>
         </NavLinkItem>
 
-        <Toggler onClick={toggleNav}> C </Toggler>
+        <Toggler onClick={toggleNav}>
+          {showNav ? <IoClose /> : <IoMenu />}{" "}
+        </Toggler>
       </NavHeader>
 
       {showNav && (

@@ -2,14 +2,23 @@ import React from "react";
 import styled from "styled-components";
 
 const FooterWrap = styled.footer`
-  margin-top: auto;
+  margin-top: 5rem;
   text-align: center;
+  padding: 3rem 0;
+  background-color: #f3f1f5;
+`;
+const Para = styled.p`
+  margin: 1rem auto;
+  font-size: 1.2rem;
 `;
 
 const Footer = () => {
   return (
     <FooterWrap>
-      <p>&copy; {`${new Date().getFullYear()}`} Adler Luders </p>
+      <Para>
+        Designed and developed by Adler Luders &copy;{" "}
+        {`${new Date().getFullYear()}`}
+      </Para>
     </FooterWrap>
   );
 };

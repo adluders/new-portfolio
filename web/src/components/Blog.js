@@ -1,7 +1,6 @@
 import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
-// import InnerLink from "./InnerLink";
 
 const Wrapper = styled(Link)`
   background-color: #f3f1f5;

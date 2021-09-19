@@ -20,6 +20,9 @@ const Title = styled.h1`
 const SubTitle = styled.p`
   font-size: 1.2rem;
   margin-top: 0.5rem;
+  &::first-letter {
+    text-transform: capitalize;
+  }
 `;
 
 const Banner = ({ title, subtitle }) => {

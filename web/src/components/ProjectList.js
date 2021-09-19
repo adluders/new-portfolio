@@ -5,7 +5,6 @@ import ProjectItem from "./ProjectItem";
 import InnerLink from "../components/InnerLink";
 
 const Wrapper = styled.section`
-  margin: 0 auto 3rem;
   border-radius: 0.5rem;
   padding: 2rem 0;
   background-color: #fff;

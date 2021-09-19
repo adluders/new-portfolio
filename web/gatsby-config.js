@@ -30,9 +30,19 @@ module.exports = {
             endpoint: "statuses/user_timeline",
             params: {
               screen_name: "just_a_devguy",
+              max_results: 50,
+              tweet_mode: "extended",
             },
           },
         },
+        // queries: {
+        //   adlertweets: {
+        //     endpoint: "statuses/user_timeline",
+        //     params: {
+        //       screen_name: "just_a_devguy",
+        //     },
+        //   },
+        // },
       },
     },
     "gatsby-plugin-styled-components",
@@ -45,7 +55,6 @@ module.exports = {
       options: {
         name: "images",
         path: "./src/images/",
-        watchMode: true,
       },
       __key: "images",
     },

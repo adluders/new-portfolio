@@ -1,28 +1,30 @@
 import { graphql } from "gatsby";
 import React from "react";
-import About from "../components/About";
 import Hero from "../components/Hero";
 import HomeBlogs from "../components/HomeBlogs";
 import Layout from "../components/Layout";
 import ProjectList from "../components/ProjectList";
+import TwitterDeck from "../components/TwitterDeck";
 
 const IndexPage = ({ data }) => {
-  const homeProjects = data.allSanityProject.nodes.filter(
+  const projects = data.allSanityProject.nodes.filter(
     project => project.showOnHome === true
   );
 
   const blogs = data.allSanityBlog.nodes.filter(blog => blog.featured === true);
 
-  console.log(blogs);
+  const tweets = data.allTwitterStatusesUserTimelineAdlertweets.nodes;
 
   return (
     <Layout title="Home">
       <Hero
         name={data.sanityAuthor.name}
+        bio={data.sanityAuthor._rawBio}
         headshot={data.sanityAuthor.headshot.asset.gatsbyImageData}
       />
-      <ProjectList projects={homeProjects} />
+      <ProjectList projects={projects} />
       <HomeBlogs blogs={blogs} />
+      <TwitterDeck tweets={tweets} />
     </Layout>
   );
 };
@@ -64,6 +66,24 @@ export const query = graphql`
         asset {
           gatsbyImageData
         }
+      }
+    }
+
+    allTwitterStatusesUserTimelineAdlertweets(
+      filter: {
+        entities: { hashtags: { elemMatch: { text: { eq: "100DaysOfCode" } } } }
+      }
+    ) {
+      nodes {
+        entities {
+          hashtags {
+            text
+          }
+        }
+        full_text
+        id_str
+        retweet_count
+        favorite_count
       }
     }
   }

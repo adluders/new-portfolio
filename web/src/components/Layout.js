@@ -23,12 +23,14 @@ const Layout = ({ children, title }) => {
   const screenSize = useResizer();
 
   return (
-    <Wrapper style={globalStyles}>
-      <SEO title={title} />
-      {screenSize < 678 ? <MobileNav /> : <Navbar />}
-      {children}
+    <>
+      <Wrapper style={globalStyles}>
+        <SEO title={title} />
+        {screenSize < 678 ? <MobileNav /> : <Navbar />}
+        {children}
+      </Wrapper>
       <Footer />
-    </Wrapper>
+    </>
   );
 };
 
