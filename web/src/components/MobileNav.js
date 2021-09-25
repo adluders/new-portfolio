@@ -46,6 +46,7 @@ const Toggler = styled.button`
   align-items: center;
   justify-content: center;
   border: none;
+  color: #333 !important;
 `;
 
 const MobileNav = () => {
