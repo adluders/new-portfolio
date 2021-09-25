@@ -1,5 +1,5 @@
 import React from "react";
-import { FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 import styled from "styled-components";
 
 const Section = styled.section`
@@ -48,9 +48,14 @@ const Div = styled.div`
       color: #1da1f2;
     }
   }
-  &:last-of-type {
+  &:nth-of-type(3) {
     a {
       color: #0e76a8;
+    }
+  }
+  &:last-of-type {
+    a {
+      color: #171515;
     }
   }
 `;
@@ -87,6 +92,12 @@ const Socialnfo = () => {
           href="https://www.linkedin.com/in/adler-luders-b55b209b"
         >
           <FaLinkedin />
+        </HyperLink>
+      </Div>
+
+      <Div>
+        <HyperLink target="_blank" href="https://github.com/adluders">
+          <FaGithub />
         </HyperLink>
       </Div>
     </Section>

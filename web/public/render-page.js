@@ -15,7 +15,11 @@
 exports.ssrComponents = {
   "component---cache-dev-404-page-js": preferDefault(__webpack_require__(/*! ./.cache/dev-404-page.js */ "./.cache/dev-404-page.js")),
   "component---src-pages-404-js": preferDefault(__webpack_require__(/*! ./src/pages/404.js */ "./src/pages/404.js")),
-  "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js"))
+  "component---src-pages-blog-index-js": preferDefault(__webpack_require__(/*! ./src/pages/blog/index.js */ "./src/pages/blog/index.js")),
+  "component---src-pages-contact-index-js": preferDefault(__webpack_require__(/*! ./src/pages/contact/index.js */ "./src/pages/contact/index.js")),
+  "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js")),
+  "component---src-pages-portfolio-index-js": preferDefault(__webpack_require__(/*! ./src/pages/portfolio/index.js */ "./src/pages/portfolio/index.js")),
+  "component---src-pages-tips-index-js": preferDefault(__webpack_require__(/*! ./src/pages/tips/index.js */ "./src/pages/tips/index.js"))
   }
 
 
@@ -8288,6 +8292,57 @@ exports.onRenderBody = onRenderBody;
 
 /***/ }),
 
+/***/ "./src/components/Banner.js":
+/*!**********************************!*\
+  !*** ./src/components/Banner.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+/* harmony import */ var _hooks_useResizer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../hooks/useResizer */ "./src/hooks/useResizer.js");
+
+
+
+
+const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_3__.default.section.withConfig({
+  displayName: "Banner__Wrapper"
+})(["border-radius:0.5rem;background-color:#fff;color:#000;padding:2rem;text-align:center;"]);
+const Title = styled_components__WEBPACK_IMPORTED_MODULE_3__.default.h1.withConfig({
+  displayName: "Banner__Title"
+})(["font-family:\"Gravitas One\",cursive;font-size:2.5rem;text-transform:capitalize;"]);
+const SubTitle = styled_components__WEBPACK_IMPORTED_MODULE_3__.default.p.withConfig({
+  displayName: "Banner__SubTitle"
+})(["font-size:1.2rem;margin-top:0.5rem;&::first-letter{text-transform:capitalize;}"]);
+
+const Banner = ({
+  title,
+  subtitle
+}) => {
+  const screenSize = (0,_hooks_useResizer__WEBPACK_IMPORTED_MODULE_2__.default)();
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Wrapper, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Title, null, title), screenSize > 768 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(SubTitle, null, " ", subtitle, " "));
+};
+
+Banner.proptyes = {
+  title: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
+  subtitle: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired)
+};
+Banner.defaultProps = {
+  title: "Title",
+  subtitle: ""
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Banner);
+
+/***/ }),
+
 /***/ "./src/components/Blog.js":
 /*!********************************!*\
   !*** ./src/components/Blog.js ***!
@@ -8333,6 +8388,70 @@ const Blog = ({
 
 /***/ }),
 
+/***/ "./src/components/ContactForm.js":
+/*!***************************************!*\
+  !*** ./src/components/ContactForm.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+
+
+const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.section.withConfig({
+  displayName: "ContactForm__Wrapper"
+})([""]);
+const Form = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.form.withConfig({
+  displayName: "ContactForm__Form"
+})(["display:flex;flex-direction:column;"]);
+const Label = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.label.withConfig({
+  displayName: "ContactForm__Label"
+})(["display:flex;flex-direction:column;font-size:1.2rem;font-family:\"Gravitas One\";font-weight:100;margin-top:1.5rem;"]);
+const Input = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.input.withConfig({
+  displayName: "ContactForm__Input"
+})(["margin-top:0.5rem;font-size:0.8rem;padding:0.5rem;border-radius:0.5rem;border:solid #ccc;"]);
+const TextArea = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.textarea.withConfig({
+  displayName: "ContactForm__TextArea"
+})(["resize:none;border-radius:0.5rem;border:solid #ccc;padding:0.5rem;margin-top:0.5rem;"]);
+const Submit = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.button.withConfig({
+  displayName: "ContactForm__Submit"
+})(["border-radius:0.5rem;border:1px solid;background-color:#5f6caf;color:#fff;padding:0.8rem 1.5rem;font-size:1.2rem;text-transform:capitalize;letter-spacing:0.1rem;cursor:pointer;margin-top:2rem;align-self:flex-end;width:50%;&:hover{background-color:#374bad;}&:focus{transform:scale(0.98);}@media screen and (max-width:600px){width:100%;}"]);
+
+const ContactForm = () => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Wrapper, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Form, {
+    method: "post",
+    action: "#"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Label, null, "Name", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Input, {
+    type: "text",
+    name: "name",
+    placeholder: "John Doe"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Label, null, "Email", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Input, {
+    type: "email",
+    name: "email",
+    placeholder: "email@example.com"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Label, null, "Subject", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Input, {
+    type: "text",
+    name: "subject",
+    placeholder: "New Project Idea..."
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Label, null, "Message", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(TextArea, {
+    name: "message",
+    placeholder: "Here is how we can work together...",
+    rows: "5"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Submit, {
+    type: "submit"
+  }, "Send")));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ContactForm);
+
+/***/ }),
+
 /***/ "./src/components/Footer.js":
 /*!**********************************!*\
   !*** ./src/components/Footer.js ***!
@@ -8354,7 +8473,7 @@ const FooterWrap = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.footer
 })(["margin-top:5rem;text-align:center;padding:3rem 0;background-color:#f3f1f5;"]);
 const Para = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.p.withConfig({
   displayName: "Footer__Para"
-})(["margin:1rem auto;font-size:1.2rem;"]);
+})(["margin:1rem auto;font-size:1.2rem;@media screen and (max-width:414px){font-size:0.8rem;margin:0.5rem auto;}"]);
 
 const Footer = () => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(FooterWrap, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Para, null, "Designed and developed by Adler Luders \xA9", " ", `${new Date().getFullYear()}`));
@@ -8392,10 +8511,10 @@ __webpack_require__.r(__webpack_exports__);
 
 const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_4__.default.section.withConfig({
   displayName: "Hero__Wrapper"
-})(["display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;align-items:center;margin:2rem 0 4rem 2rem;@media screen and (max-width:768px){display:flex;flex-direction:column-reverse;}"]);
+})(["display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;align-items:center;margin:2rem 0 4rem 2rem;@media screen and (max-width:768px){display:flex;flex-direction:column-reverse;margin:1rem 0;}"]);
 const HeroMessage = styled_components__WEBPACK_IMPORTED_MODULE_4__.default.div.withConfig({
   displayName: "Hero__HeroMessage"
-})(["display:flex;flex-direction:column;gap:1rem;a{@media screen and (max-width:768px){margin:0 auto;}}@media screen and (max-width:768px){text-align:center;}"]);
+})(["display:flex;flex-direction:column;gap:1rem;p{line-height:2rem;}a{@media screen and (max-width:768px){margin:0 auto;}}@media screen and (max-width:768px){text-align:center;}"]);
 const Title = styled_components__WEBPACK_IMPORTED_MODULE_4__.default.h1.withConfig({
   displayName: "Hero__Title"
 })(["text-transform:capitalize;font-family:\"Gravitas One\",cursive;font-size:4rem;@media screen and (max-width:505px){font-size:3rem;}"]);
@@ -8920,6 +9039,96 @@ SEO.defaultProps = {
 
 /***/ }),
 
+/***/ "./src/components/Socialnfo.js":
+/*!*************************************!*\
+  !*** ./src/components/Socialnfo.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+
+
+
+const Section = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.section.withConfig({
+  displayName: "Socialnfo__Section"
+})(["display:flex;margin:auto;gap:3rem;height:max-content;"]);
+const Div = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div.withConfig({
+  displayName: "Socialnfo__Div"
+})(["&:first-of-type{background:radial-gradient( circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285aeb 90% );height:3.1rem;width:3.2rem;border-radius:0.7rem;padding:0.2rem;display:flex;text-align:center;align-items:center;justify-content:center;a{color:#fff;font-size:2.7rem;margin:auto;}@media screen and (max-width:768px){width:2.1rem;height:2rem;border-radius:0.4rem;a{font-size:1.7rem;}}}&:nth-of-type(2){a{color:#1da1f2;}}&:nth-of-type(3){a{color:#0e76a8;}}&:last-of-type{a{color:#171515;}}"]);
+const HyperLink = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.a.withConfig({
+  displayName: "Socialnfo__HyperLink"
+})(["font-size:3rem;@media screen and (max-width:768px){font-size:2rem;}"]);
+
+const Socialnfo = () => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Section, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Div, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(HyperLink, {
+    target: "_blank",
+    href: "https://www.instagram.com/just_a_devguy/"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__.FaInstagram, null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Div, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(HyperLink, {
+    target: "_blank",
+    href: "https://twitter.com/just_a_devguy/"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__.FaTwitter, null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Div, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(HyperLink, {
+    target: "_blank",
+    href: "https://www.linkedin.com/in/adler-luders-b55b209b"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__.FaLinkedin, null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Div, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(HyperLink, {
+    target: "_blank",
+    href: "https://github.com/adluders"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__.FaGithub, null))));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Socialnfo);
+
+/***/ }),
+
+/***/ "./src/components/Tip.js":
+/*!*******************************!*\
+  !*** ./src/components/Tip.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+/* harmony import */ var _sanity_block_content_to_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @sanity/block-content-to-react */ "./node_modules/@sanity/block-content-to-react/lib/BlockContent.js");
+/* harmony import */ var _sanity_block_content_to_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_sanity_block_content_to_react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div.withConfig({
+  displayName: "Tip__Wrapper"
+})(["box-shadow:2px 2px 2px 1px rgba(0,0,0,0.7);padding:1rem;border-radius:0.5rem;"]);
+const Title = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.h3.withConfig({
+  displayName: "Tip__Title"
+})(["margin-bottom:0.5rem;"]);
+
+const Tip = ({
+  tipInfo
+}) => {
+  const {
+    tip,
+    _rawInfo
+  } = tipInfo;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Wrapper, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Title, null, " ", tip, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((_sanity_block_content_to_react__WEBPACK_IMPORTED_MODULE_1___default()), {
+    blocks: _rawInfo
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Tip);
+
+/***/ }),
+
 /***/ "./src/components/TwitterDeck.js":
 /*!***************************************!*\
   !*** ./src/components/TwitterDeck.js ***!
@@ -9038,49 +9247,113 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Layout */ "./src/components/Layout.js");
 
- // styles
 
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif"
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320
-};
-const paragraphStyles = {
-  marginBottom: 48
-};
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4
-}; // markup
+
+const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.section.withConfig({
+  displayName: "sc-404__Wrapper"
+})(["display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;margin:auto;"]);
+const Title = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.h1.withConfig({
+  displayName: "sc-404__Title"
+})(["font-size:10rem;@media screen and (max-width:415px){font-size:5rem;}"]);
+const Subtitle = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.p.withConfig({
+  displayName: "sc-404__Subtitle"
+})(["font-size:4rem;text-transform:capitalize;@media screen and (max-width:415px){font-size:2rem;}"]);
 
 const NotFoundPage = () => {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", {
-    style: pageStyles
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("title", null, "Not found"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
-    style: headingStyles
-  }, "Page not found"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-    style: paragraphStyles
-  }, "Sorry", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    role: "img",
-    "aria-label": "Pensive emoji"
-  }, "\uD83D\uDE14"), " ", "we couldn\u2019t find what you were looking for.", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null),  true ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "Try creating a page in ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("code", {
-    style: codeStyles
-  }, "src/pages/"), ".", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null)) : 0, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    to: "/"
-  }, "Go home"), "."));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_1__.default, {
+    title: "Page Not Found"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Wrapper, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Title, null, "OOPS"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Subtitle, null, "Nothing to see here!")));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NotFoundPage);
+
+/***/ }),
+
+/***/ "./src/pages/blog/index.js":
+/*!*********************************!*\
+  !*** ./src/pages/blog/index.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/Layout */ "./src/components/Layout.js");
+/* harmony import */ var _components_Blog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Blog */ "./src/components/Blog.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+/* harmony import */ var _components_Banner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Banner */ "./src/components/Banner.js");
+
+
+
+
+
+const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_4__.default.section.withConfig({
+  displayName: "blog__Wrapper"
+})(["max-width:75%;margin:3rem auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:5rem;background-color:#fff;padding:2rem;border-radius:0.5rem;@media screen and (max-width:768px){max-width:100%;margin:auto;padding:0;gap:2.5rem;}@media screen and (max-width:414px){margin-top:1.5rem;}"]);
+
+const BlogIndex = ({
+  data
+}) => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_1__.default, {
+    title: "Blog"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Banner__WEBPACK_IMPORTED_MODULE_3__.default, {
+    title: "my articles",
+    subtitle: "come get inside the mind of a self-taught developer. Here you can read about different pain points and the various experiences I faced teaching myself how to code"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Wrapper, null, data.allSanityBlog.nodes.map(blogItem => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Blog__WEBPACK_IMPORTED_MODULE_2__.default, {
+    key: blogItem._id,
+    blog: blogItem
+  }))));
+};
+
+const query = "1651414954";
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BlogIndex);
+
+/***/ }),
+
+/***/ "./src/pages/contact/index.js":
+/*!************************************!*\
+  !*** ./src/pages/contact/index.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/Layout */ "./src/components/Layout.js");
+/* harmony import */ var _components_Banner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Banner */ "./src/components/Banner.js");
+/* harmony import */ var _components_ContactForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/ContactForm */ "./src/components/ContactForm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+/* harmony import */ var _components_Socialnfo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Socialnfo */ "./src/components/Socialnfo.js");
+
+
+
+
+
+
+const Details = styled_components__WEBPACK_IMPORTED_MODULE_5__.default.section.withConfig({
+  displayName: "contact__Details"
+})(["display:grid;grid-template-columns:repeat(2,1fr);gap:5rem;margin-bottom:3rem;@media screen and (max-width:768px){display:flex;flex-direction:column-reverse;gap:2rem;}"]);
+
+const Contact = () => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_1__.default, {
+    title: "Contact"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Banner__WEBPACK_IMPORTED_MODULE_2__.default, {
+    title: "contact info"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Details, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ContactForm__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Socialnfo__WEBPACK_IMPORTED_MODULE_4__.default, null)));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Contact);
 
 /***/ }),
 
@@ -9132,6 +9405,96 @@ const IndexPage = ({
 
 const query = "3993932015";
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);
+
+/***/ }),
+
+/***/ "./src/pages/portfolio/index.js":
+/*!**************************************!*\
+  !*** ./src/pages/portfolio/index.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+/* harmony import */ var _components_Banner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/Banner */ "./src/components/Banner.js");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Layout */ "./src/components/Layout.js");
+/* harmony import */ var _components_ProjectItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/ProjectItem */ "./src/components/ProjectItem.js");
+
+
+
+
+
+const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_4__.default.section.withConfig({
+  displayName: "portfolio__Wrapper"
+})(["display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;margin:2rem auto;"]);
+
+const Portfolio = ({
+  data
+}) => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_2__.default, {
+    title: "Portfolio"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Banner__WEBPACK_IMPORTED_MODULE_1__.default, {
+    title: "my work",
+    subtitle: "here are some of my favorite project"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Wrapper, null, data.allSanityProject.nodes.map(project => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ProjectItem__WEBPACK_IMPORTED_MODULE_3__.default, {
+    key: project.id,
+    project: project
+  }))));
+};
+
+const query = "276618883";
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Portfolio);
+
+/***/ }),
+
+/***/ "./src/pages/tips/index.js":
+/*!*********************************!*\
+  !*** ./src/pages/tips/index.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/Layout */ "./src/components/Layout.js");
+/* harmony import */ var _components_Banner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Banner */ "./src/components/Banner.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+/* harmony import */ var _components_Tip__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Tip */ "./src/components/Tip.js");
+
+
+
+
+
+const Content = styled_components__WEBPACK_IMPORTED_MODULE_4__.default.section.withConfig({
+  displayName: "tips__Content"
+})(["display:grid;grid-template-columns:repeat(auto-fit,minmax(315px,0.5fr));"]);
+
+const DevTips = ({
+  data
+}) => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_1__.default, {
+    title: "Dev Tips"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Banner__WEBPACK_IMPORTED_MODULE_2__.default, {
+    title: "tips",
+    subtitle: "welcome to the dev zone! These are some of the little things that helps me in my day to day development activities."
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Content, null, data.allSanityTip.nodes.map(tip => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Tip__WEBPACK_IMPORTED_MODULE_3__.default, {
+    tipInfo: tip,
+    key: tip.id
+  }))));
+};
+
+const query = "3385302716";
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DevTips);
 
 /***/ }),
 

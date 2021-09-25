@@ -20,6 +20,9 @@ const Wrapper = styled.section`
     padding: 0;
     gap: 2.5rem;
   }
+  @media screen and (max-width: 414px) {
+    margin-top: 1.5rem;
+  }
 `;
 
 const BlogIndex = ({ data }) => {

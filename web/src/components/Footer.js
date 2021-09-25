@@ -10,6 +10,10 @@ const FooterWrap = styled.footer`
 const Para = styled.p`
   margin: 1rem auto;
   font-size: 1.2rem;
+  @media screen and (max-width: 414px) {
+    font-size: 0.8rem;
+    margin: 0.5rem auto;
+  }
 `;
 
 const Footer = () => {

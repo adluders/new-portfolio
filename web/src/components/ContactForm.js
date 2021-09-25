@@ -30,6 +30,7 @@ const TextArea = styled.textarea`
   border-radius: 0.5rem;
   border: solid #ccc;
   padding: 0.5rem;
+  margin-top: 0.5rem;
 `;
 
 const Submit = styled.button`
@@ -63,7 +64,8 @@ const Submit = styled.button`
 const ContactForm = () => {
   return (
     <Wrapper>
-      <Form method="post" action="#">
+      <Form name="contact" method="POST">
+        <Input type="hidden" name="contact" value="contact" />
         <Label>
           Name
           <Input type="text" name="name" placeholder="John Doe" />

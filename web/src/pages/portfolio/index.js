@@ -7,7 +7,7 @@ import ProjectItem from "../../components/ProjectItem";
 
 const Wrapper = styled.section`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   margin: 2rem auto;
 `;

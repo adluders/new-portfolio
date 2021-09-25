@@ -14,6 +14,7 @@ const Wrapper = styled.section`
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column-reverse;
+    margin: 1rem 0;
   }
 `;
 
@@ -21,6 +22,9 @@ const HeroMessage = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  p {
+    line-height: 2rem;
+  }
   a {
     @media screen and (max-width: 768px) {
       margin: 0 auto;

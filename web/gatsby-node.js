@@ -44,7 +44,6 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  console.log(results);
 
   const projectTemplate = path.resolve(
     `src/components/templates/ProjectInfo.js`

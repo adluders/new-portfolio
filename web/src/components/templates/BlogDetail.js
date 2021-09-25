@@ -10,6 +10,9 @@ const Wrapper = styled.section`
   h4 {
     margin: 1rem 0;
   }
+  p {
+    line-height: 2rem;
+  }
 `;
 
 const BlogDetail = ({ pageContext }) => {
