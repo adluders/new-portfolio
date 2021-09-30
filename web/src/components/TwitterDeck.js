@@ -78,7 +78,7 @@ const TwitterDeck = ({ tweets }) => {
 
   return (
     <Wrapper>
-      <Title href={`${BASE_URL}`} target="_blank">
+      <Title href={`${BASE_URL}`} target="_blank" rel="noopener norefferer">
         @just_a_devguy <FaTwitter />
       </Title>
 
