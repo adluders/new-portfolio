@@ -7,7 +7,8 @@ import { graphql } from "gatsby";
 
 const Content = styled.section`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(315px, 0.5fr));
+  grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+  gap: 3rem;
 `;
 
 const DevTips = ({ data }) => {
