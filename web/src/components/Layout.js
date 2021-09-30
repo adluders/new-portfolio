@@ -8,11 +8,15 @@ import MobileNav from "./MobileNav";
 import useResizer from "../hooks/useResizer";
 import SEO from "./SEO";
 
-const Wrapper = styled.div`
+const BigDiv = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 90%;
+  justify-content: space-between;
   min-height: 100vh;
+`;
+
+const Wrapper = styled.div`
+  width: 90%;
   margin: 0 auto;
   @media screen and (max-width: 505px) {
     margin: 0 1rem;
@@ -23,14 +27,14 @@ const Layout = ({ children, title }) => {
   const screenSize = useResizer();
 
   return (
-    <>
+    <BigDiv>
       <Wrapper style={globalStyles}>
         <SEO title={title} />
         {screenSize < 678 ? <MobileNav /> : <Navbar />}
         {children}
       </Wrapper>
       <Footer />
-    </>
+    </BigDiv>
   );
 };
 

@@ -29,8 +29,8 @@ const BlogIndex = ({ data }) => {
   return (
     <Layout title="Blog">
       <Banner
-        title="my articles"
-        subtitle="come get inside the mind of a self-taught developer. Here you can read about different pain points and the various experiences I faced teaching myself how to code"
+        title="articles"
+        subtitle="Articles! More in-depth tips! You name it! Here you will find them all!"
       />
       <Wrapper>
         {data.allSanityBlog.nodes.map(blogItem => (

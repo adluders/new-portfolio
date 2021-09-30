@@ -12038,10 +12038,10 @@ const Label = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.label.withC
 })(["display:flex;flex-direction:column;font-size:1.2rem;font-family:\"Gravitas One\";font-weight:100;margin-top:1.5rem;"]);
 const Input = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.input.withConfig({
   displayName: "ContactForm__Input"
-})(["margin-top:0.5rem;font-size:0.8rem;padding:0.5rem;border-radius:0.5rem;border:solid #ccc;"]);
+})(["margin-top:0.5rem;font-size:1.1rem;padding:0.5rem 0.8rem;border-radius:0.5rem;border:1px solid #ccc;"]);
 const TextArea = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.textarea.withConfig({
   displayName: "ContactForm__TextArea"
-})(["resize:none;border-radius:0.5rem;border:solid #ccc;padding:0.5rem;margin-top:0.5rem;"]);
+})(["resize:none;border-radius:0.5rem;border:1px solid #ccc;padding:0.5rem;margin-top:0.5rem;font-size:1.1rem;"]);
 const Submit = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.button.withConfig({
   displayName: "ContactForm__Submit"
 })(["border-radius:0.5rem;border:1px solid;background-color:#5f6caf;color:#fff;padding:0.8rem 1.5rem;font-size:1.2rem;text-transform:capitalize;letter-spacing:0.1rem;cursor:pointer;margin-top:2rem;align-self:flex-end;width:50%;&:hover{background-color:#374bad;}&:focus{transform:scale(0.98);}@media screen and (max-width:600px){width:100%;}"]);
@@ -12080,7 +12080,8 @@ const ContactForm = () => {
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Wrapper, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Form, {
-    onSubmit: handleOnSubmit
+    onSubmit: handleOnSubmit,
+    action: "https://getform.io/f/7988c389-1110-44df-8860-be85b1b85381"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Input, {
     type: "hidden",
     name: "form-name",
@@ -12328,16 +12329,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const BigDiv = styled_components__WEBPACK_IMPORTED_MODULE_8__.default.div.withConfig({
+  displayName: "Layout__BigDiv"
+})(["display:flex;flex-direction:column;justify-content:space-between;min-height:100vh;"]);
 const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_8__.default.div.withConfig({
   displayName: "Layout__Wrapper"
-})(["display:flex;flex-direction:column;max-width:90%;min-height:100vh;margin:0 auto;@media screen and (max-width:505px){margin:0 1rem;}"]);
+})(["width:90%;margin:0 auto;@media screen and (max-width:505px){margin:0 1rem;}"]);
 
 const Layout = ({
   children,
   title
 }) => {
   const screenSize = (0,_hooks_useResizer__WEBPACK_IMPORTED_MODULE_6__.default)();
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Wrapper, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(BigDiv, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Wrapper, {
     style: _global_css__WEBPACK_IMPORTED_MODULE_2__
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_SEO__WEBPACK_IMPORTED_MODULE_7__.default, {
     title: title

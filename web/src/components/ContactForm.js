@@ -20,18 +20,19 @@ const Label = styled.label`
 
 const Input = styled.input`
   margin-top: 0.5rem;
-  font-size: 0.8rem;
-  padding: 0.5rem;
+  font-size: 1.1rem;
+  padding: 0.5rem 0.8rem;
   border-radius: 0.5rem;
-  border: solid #ccc;
+  border: 1px solid #ccc;
 `;
 
 const TextArea = styled.textarea`
   resize: none;
   border-radius: 0.5rem;
-  border: solid #ccc;
+  border: 1px solid #ccc;
   padding: 0.5rem;
   margin-top: 0.5rem;
+  font-size: 1.1rem;
 `;
 
 const Submit = styled.button`

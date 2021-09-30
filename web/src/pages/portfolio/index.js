@@ -15,7 +15,10 @@ const Wrapper = styled.section`
 const Portfolio = ({ data }) => {
   return (
     <Layout title="Portfolio">
-      <Banner title="my work" subtitle="here are some of my favorite project" />
+      <Banner
+        title="my work"
+        subtitle="These are some of my favorite projects. Come learn what made them unique and why I loved working on each of them"
+      />
       <Wrapper>
         {data.allSanityProject.nodes.map(project => (
           <ProjectItem key={project.id} project={project} />
