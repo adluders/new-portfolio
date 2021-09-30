@@ -1,6 +1,15 @@
 const path = require("path");
 
 exports.createPages = async ({ graphql, actions }) => {
+  //Redirects
+  // const { createRedirect } = actions;
+
+  // createRedirect({
+  //   fromPath: "/contact",
+  //   toPath: "/",
+  //   statusCode: 200,
+  // });
+
   const { createPage } = actions;
 
   const results = await graphql(`
@@ -43,7 +52,6 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-
 
   const projectTemplate = path.resolve(
     `src/components/templates/ProjectInfo.js`

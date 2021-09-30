@@ -35,28 +35,21 @@ module.exports = {
             },
           },
         },
-        // queries: {
-        //   adlertweets: {
-        //     endpoint: "statuses/user_timeline",
-        //     params: {
-        //       screen_name: "just_a_devguy",
-        //     },
-        //   },
-        // },
       },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `src`,
+        path: `${__dirname}/src`,
+      },
+      __key: "images",
     },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: "./src/images/",
-      },
-      __key: "images",
-    },
+    "gatsby-plugin-netlify",
   ],
 };

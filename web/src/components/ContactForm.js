@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import styled from "styled-components";
 
 const Wrapper = styled.section``;
@@ -62,15 +63,35 @@ const Submit = styled.button`
 `;
 
 const ContactForm = () => {
+  const [serverState, setServerState] = useState({
+    submitting: false,
+    status: null,
+  });
+
+  const handleServerResponse = (ok, msg, form) => {
+    setServerState({ submitting: false, status: { ok, msg } });
+    ok && form.reset();
+  };
+
+  const handleOnSubmit = e => {
+    e.preventDefault();
+    const form = e.target;
+    setServerState({ submitting: true });
+    axios({
+      method: "post",
+      url: "https://getform.io/f/7988c389-1110-44df-8860-be85b1b85381",
+      data: new FormData(form),
+    })
+      .then(res => handleServerResponse(true, "Thanks", form))
+      .catch(res => handleServerResponse(false, res.response.data.error, form));
+  };
   return (
     <Wrapper>
       <Form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
+        onSubmit={handleOnSubmit}
+        action="https://getform.io/f/7988c389-1110-44df-8860-be85b1b85381"
       >
-        <Input type="hidden" name="contact" value="contact" />
+        <Input type="hidden" name="form-name" value="contact" />
         <Label>
           Name
           <Input type="text" name="name" placeholder="John Doe" />
